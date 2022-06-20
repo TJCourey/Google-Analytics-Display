@@ -1,0 +1,23 @@
+{
+  "name": "analytics_display",
+  "version": "0.0.1",
+  "description": "A program to take Google Analytics data and display it on a website.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TJCourey/Google-Analytics-Display.git"
+  },
+  "author": "TJ Courey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TJCourey/Google-Analytics-Display/issues"
+  },
+  "homepage": "https://github.com/TJCourey/Google-Analytics-Display#readme",
+  "dependencies": {
+    "@google-analytics/data": "^2.8.0",
+    "jest": "^28.1.1"
+  }
+}
