@@ -1,3 +1,6 @@
+let dataToDisplay = document.getElementById('rawdata')
+
+let testData = []
 // add universal variables for api calls
 
 //  add api key
@@ -44,7 +47,15 @@
     response.rows.forEach(row => {
       console.log(row.dimensionValues[0], row.metricValues[0]);
     });
+    displayData(response)
   }
 
   runReport();
-// set data on html page
+  // set data on html page
+function displayData(data) {
+  dataToDisplay.appendChild(
+    data.forEach(
+      dataToDisplay.innerHTML(<p> data[0] </p>)
+    )
+  )
+}
