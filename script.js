@@ -1,6 +1,6 @@
 let dataToDisplay = document.getElementById('rawdata')
 
-let testData = []
+let testData = {}
 // add universal variables for api calls
 
 //  add api key
@@ -12,7 +12,7 @@ let testData = []
    * TODO(developer): Uncomment this variable and replace with your
    *   Google Analytics 4 property ID before running the sample.
    */
-  propertyId = '258713111';
+  propertyId = 'ZX1RVYHRMJ';
 
   // Imports the Google Analytics Data API client library.
   const {BetaAnalyticsDataClient} = require('@google-analytics/data');
@@ -55,7 +55,7 @@ let testData = []
 function displayData(data) {
   dataToDisplay.appendChild(
     data.forEach(
-      dataToDisplay.innerHTML(<p> data[0] </p>)
+      dataToDisplay.innerHTML("<p>" + data[0] + "</p>")
     )
   )
 }
