@@ -18,6 +18,7 @@
   "homepage": "https://github.com/TJCourey/Google-Analytics-Display#readme",
   "dependencies": {
     "@google-analytics/data": "^2.8.0",
+    "eslint": "^8.18.0",
     "jest": "^28.1.1"
   }
 }
