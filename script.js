@@ -1,10 +1,35 @@
-let dataToDisplay = document.getElementById('rawdata')
+// Imports the Google Cloud client library.
+const {Storage} = require('@google-cloud/storage');
+
+// Instantiates a client. Explicitly use service account credentials by
+// specifying the private key file. All clients in google-cloud-node have this
+// helper, see https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
+const projectId = 'analyticsdisplay-1656554425722'
+const keyFilename = '/Users/User/Desktop/projects/analytics_display/AnalyticsDisplay-a36cc069f00c.json'
+const storage = new Storage({projectId, keyFilename});
+
+// Makes an authenticated API request.
+async function listBuckets() {
+  try {
+    const [buckets] = await storage.getBuckets();
+
+    console.log('Buckets:');
+    buckets.forEach(bucket => {
+      console.log(bucket.name);
+    });
+  } catch (err) {
+    console.error('ERROR:', err);
+  }
+}
+listBuckets();
+
+// let dataToDisplay = document.getElementById('rawdata')
 
 let testData = {}
 // add universal variables for api calls
 
 //  add api key
-
+// let GOOGLE_APPLICATION_CREDENTIALS = "AnalyticsDisplay-a36cc069f00c.json"
 
 //  add clients GA4 to collect info from
     // call google api
@@ -47,7 +72,7 @@ let testData = {}
     response.rows.forEach(row => {
       console.log(row.dimensionValues[0], row.metricValues[0]);
     });
-    displayData(response)
+    // displayData(response)
   }
 
   runReport();
