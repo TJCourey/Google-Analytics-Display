@@ -1,31 +1,30 @@
 // Imports the Google Cloud client library.
 const {Storage} = require('@google-cloud/storage');
-
+require('dotenv').config()
 // Instantiates a client. Explicitly use service account credentials by
 // specifying the private key file. All clients in google-cloud-node have this
 // helper, see https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
-const projectId = 'analyticsdisplay-1656554425722'
-const keyFilename = '/Users/User/Desktop/projects/analytics_display/AnalyticsDisplay-a36cc069f00c.json'
-const storage = new Storage({projectId, keyFilename});
+
+const storage = new Storage();
 
 // Makes an authenticated API request.
-async function listBuckets() {
-  try {
-    const [buckets] = await storage.getBuckets();
+// async function listBuckets() {
+//   try {
+//     const [buckets] = await storage.getBuckets();
 
-    console.log('Buckets:');
-    buckets.forEach(bucket => {
-      console.log(bucket.name);
-    });
-  } catch (err) {
-    console.error('ERROR:', err);
-  }
-}
-listBuckets();
+//     console.log('Buckets:');
+//     buckets.forEach(bucket => {
+//       console.log(bucket.name);
+//     });
+//   } catch (err) {
+//     console.error('ERROR:', err);
+//   }
+// }
+// listBuckets();
 
 // let dataToDisplay = document.getElementById('rawdata')
 
-let testData = {}
+// let testData = {}
 // add universal variables for api calls
 
 //  add api key
@@ -37,7 +36,7 @@ let testData = {}
    * TODO(developer): Uncomment this variable and replace with your
    *   Google Analytics 4 property ID before running the sample.
    */
-  propertyId = 'ZX1RVYHRMJ';
+  propertyId = '315574323';
 
   // Imports the Google Analytics Data API client library.
   const {BetaAnalyticsDataClient} = require('@google-analytics/data');

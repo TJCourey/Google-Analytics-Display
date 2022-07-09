@@ -19,6 +19,7 @@
   "dependencies": {
     "@google-analytics/data": "^2.8.0",
     "@google-cloud/storage": "^6.2.2",
+    "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "jest": "^28.1.1"
   }
