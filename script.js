@@ -7,28 +7,10 @@ require('dotenv').config()
 
 const storage = new Storage();
 
-// Makes an authenticated API request.
-// async function listBuckets() {
-//   try {
-//     const [buckets] = await storage.getBuckets();
-
-//     console.log('Buckets:');
-//     buckets.forEach(bucket => {
-//       console.log(bucket.name);
-//     });
-//   } catch (err) {
-//     console.error('ERROR:', err);
-//   }
-// }
-// listBuckets();
-
 // let dataToDisplay = document.getElementById('rawdata')
 
 // let testData = {}
 // add universal variables for api calls
-
-//  add api key
-// let GOOGLE_APPLICATION_CREDENTIALS = "AnalyticsDisplay-a36cc069f00c.json"
 
 //  add clients GA4 to collect info from
     // call google api
@@ -49,6 +31,7 @@ const storage = new Storage();
   async function runReport() {
     const [response] = await analyticsDataClient.runReport({
       property: `properties/${propertyId}`,
+      +
       dateRanges: [
         {
           startDate: '2020-03-31',
@@ -56,20 +39,32 @@ const storage = new Storage();
         },
       ],
       dimensions: [
+        // {
+        //   name: 'eventName',
+        // },
         {
           name: 'city',
         },
       ],
       metrics: [
+        // {
+        //   name: 'activeUsers',
+        // },
+        // {
+        //   name: 'organicGoogleSearchClicks',
+        // },
         {
-          name: 'activeUsers',
+          name: 'organicGoogleSearchAveragePosition',
         },
+
+
       ],
     });
 
     console.log('Report result:');
+    // console.log(response)
     response.rows.forEach(row => {
-      console.log(row.dimensionValues[0], row.metricValues[0]);
+      console.log(row.metricValues[0]);
     });
     // displayData(response)
   }
