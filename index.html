@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics Display</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <!-- <script data-main = "scripts/main" src = "require.js"></script> -->
+    <link rel="stylesheet" href="./style.css">
+    <script data-main = "scripts/main" src = "require.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js" defer></script>
+    <script src="./chart.js" defer></script>
 </head>
 <body>
     <div id="rawData">
@@ -17,5 +19,12 @@
     <div id="userData">
 
     </div>
+    <div id="lineChart">
+        <canvas id="myLineChart" width="600" height="600"></canvas>
+     </div>
+    <div id="barChart">
+        <canvas id="myBarChart" width="600" height="500"></canvas>
+     </div>
+      
 </body>
 </html>

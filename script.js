@@ -4,13 +4,11 @@ require('dotenv').config()
 // Instantiates a client. Explicitly use service account credentials by
 // specifying the private key file. All clients in google-cloud-node have this
 // helper, see https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
-
+const express = require('express')
 const storage = new Storage();
 
-// let dataToDisplay = document.getElementById('rawdata')
+let dataToDisplay = document.getElementById('rawdata')
 
-// let testData = {}
-// add universal variables for api calls
 
 //  add clients GA4 to collect info from
     // call google api
@@ -31,7 +29,6 @@ const storage = new Storage();
   async function runReport() {
     const [response] = await analyticsDataClient.runReport({
       property: `properties/${propertyId}`,
-      +
       dateRanges: [
         {
           startDate: '2020-03-31',
