@@ -17,14 +17,14 @@ const barLabels = [
     datasets: [
     {
       label: 'Previous Years Users',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: '#34495E',
+      borderColor: '#34495E',
       data: [7, 10, 5, 2, 20, 30, 45],
     },
     {
       label: 'This Years Users',
-      backgroundColor: 'rgb(50, 168, 82)',
-      borderColor: 'rgb(50, 168, 82)',
+      backgroundColor: '#4DB2DF',
+      borderColor: '#4DB2DF',
       data: [5, 7, 22, 18, 29, 36, 55],
     }
 ]
@@ -34,14 +34,14 @@ const barLabels = [
     datasets: [
     {
       label: 'Previous Years Users',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: '#34495E',
+      borderColor: '#34495E',
       data: [10500, 7000, 1250],
     },
     {
       label: 'This Years Users',
-      backgroundColor: 'rgb(50, 168, 82)',
-      borderColor: 'rgb(50, 168, 82)',
+      backgroundColor: '#E8F4F7',
+      borderColor: '#E8F4F7',
       data: [13000, 9500,  1100],
     }
 ]
