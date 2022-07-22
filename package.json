@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A program to take Google Analytics data and display it on a website.",
   "main": "script.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
@@ -23,6 +24,7 @@
     "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "express": "^4.18.1",
-    "jest": "^28.1.1"
+    "jest": "^28.1.1",
+    "require.js": "^1.0.0"
   }
 }

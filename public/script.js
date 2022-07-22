@@ -1,10 +1,15 @@
 // import results from server.js
-const apiData = require("./server.js")
+// change all require to import
+const runReport = require("../server.js")
+// import { runReport } from "../server.js";
 // declare variables from
 console.log("script.js")
 // add function to diplay raw data
+let report = runReport()
+
 let dataToDisplay = document.getElementById('rawdata')
 function displayData(data) {
+  console.table(data)
     dataToDisplay.appendChild(
       data.forEach(
         dataToDisplay.innerHTML("<p>" + data[0] + "</p>")
@@ -13,5 +18,5 @@ function displayData(data) {
   }
 
 //   add funtion to complie data from server.js
-displayData(apiData)
+displayData(report.rows)
 // export to chart.js

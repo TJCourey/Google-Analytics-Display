@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics Display</title>
-    <link rel="stylesheet" href="./style.css">
-    <!-- <script data-main = "scripts/main" src = "require.js" defer></script> -->
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <script data-main = "scripts/main" src = "./node_modules/require.js/require.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./script.js" defer></script>
     <script src="./chart.js" defer></script>
 </head>
 <body>
     <div id="rawData">
+        <h2>Raw Data</h2>
         <!-- Create display for information -->
         <!-- Create dynaming label for information -->
     </div>
@@ -20,9 +21,11 @@
     </div>
     <div id="chartSection">
     <div id="lineChart">
+        <h3>Line Chart</h3>
         <canvas id="myLineChart" width="600" height="600"></canvas>
     </div>
     <div id="barChart">
+        <h3>Bar Chart</h3>
         <canvas id="myBarChart" width="600" height="500"></canvas>
     </div>
 </div>    

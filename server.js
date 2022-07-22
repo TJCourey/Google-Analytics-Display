@@ -1,13 +1,14 @@
 // Imports the Google Cloud client library.
-const {Storage} = require('@google-cloud/storage');
-require('dotenv').config()
+import { Storage } from '@google-cloud/storage';
+// require('dotenv').config()
+import 'dotenv/config'
 // Instantiates a client. Explicitly use service account credentials by
 // specifying the private key file. All clients in google-cloud-node have this
 // helper, see https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
-const express = require('express')
-const storage = new Storage();
+// const express = require('express')
 
-var apiReturn = {}
+const storage = new Storage();
+let apiReturn = {}
 
 
 //  add clients GA4 to collect info from
@@ -16,18 +17,19 @@ var apiReturn = {}
    * TODO(developer): Uncomment this variable and replace with your
    *   Google Analytics 4 property ID before running the sample.
    */
-  propertyId = '315574323';
+  let propertyId = '315574323';
 
   // Imports the Google Analytics Data API client library.
-  const {BetaAnalyticsDataClient} = require('@google-analytics/data');
-
+  // const {BetaAnalyticsDataClient} = require('@google-analytics/data');
+  import { BetaAnalyticsDataClient } from "@google-analytics/data";
   // Using a default constructor instructs the client to use the credentials
   // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
   const analyticsDataClient = new BetaAnalyticsDataClient();
 
   // Runs a simple report.
-  async function runReport() {
-    const [response] = await analyticsDataClient.runReport({
+ export async function runReport() {
+  return await new Promise((resolve,reject)=>{
+     analyticsDataClient.runReport({
       property: `properties/${propertyId}`,
       dateRanges: [
         {
@@ -56,16 +58,21 @@ var apiReturn = {}
 
 
       ],
-    });
-    apiReturn = response;
-    console.log('Report result:');
+    }).then(res=>{resolve(res)}).catch(error=>{reject(error)});
+    // console.log('Report result:');
     
-    response.rows.forEach(row => {
-      console.log(row.dimensionValues[0], row.metricValues[0]);
-    });
-  }
+    // // response.rows.forEach(row => {
+    //   //   console.log(row.dimensionValues[0], row.metricValues[0]);
+    //   // });
 
-  runReport();
+    //   return response;
+
+
+  })
+    
+    }
+
+  // runReport();
   
   // set data on html page
-module.exports = apiReturn;
+// module.exports = runReport();
